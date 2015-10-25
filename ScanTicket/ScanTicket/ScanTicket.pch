@@ -1,0 +1,36 @@
+//
+//  ScanTicket.pch
+//  ScanTicket
+//
+//  Created by 冠东 陈 on 10/6/15.
+//  Copyright © 2015 冠东 陈. All rights reserved.
+//
+
+#ifndef ScanTicket_pch
+#define ScanTicket_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "AppDelegate.h"
+#import <AFNetworking.h>
+#import <SVProgressHUD.h>
+#import "MBProgressHUD+LXProgressHUD.h"
+#import "NetWorkTools.h"
+#import "JsonTools.h"
+#import "NSString+LXEmptyString.h"
+#define IM_LogResponseString NSLog(@"%@",[operation responseString]);
+
+#define IM_SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define IM_SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+
+#define IM_GlobalColor UIColorFromRGB(0x02B168)
+
+#define IM_GrayBgColor UIColorFromRGB(0x33475f)
+
+
+#define SharedApp ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
+#endif /* ScanTicket_pch */
