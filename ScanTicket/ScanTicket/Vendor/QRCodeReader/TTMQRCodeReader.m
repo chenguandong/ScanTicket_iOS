@@ -92,18 +92,7 @@ static const float kReaderViewHeight = 200;
         return;
     }
     
-    if ([captureDevice hasTorch])
-    {
-        BOOL locked = [captureDevice lockForConfiguration:&error];
-        if (locked)
-        {
-
-            if (flashLightOn) {
-                [captureDevice setTorchMode:AVCaptureTorchModeOn];
-                [captureDevice unlockForConfiguration];
-            }
-        }
-    }
+    
     
     
     
@@ -156,6 +145,19 @@ static const float kReaderViewHeight = 200;
     }
     
     _lineTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 / 20 target:self selector:@selector(animationLine) userInfo:nil repeats:YES];
+    
+    if ([captureDevice hasTorch])
+    {
+        BOOL locked = [captureDevice lockForConfiguration:&error];
+        if (locked)
+        {
+            
+            if (flashLightOn) {
+                [captureDevice setTorchMode:AVCaptureTorchModeOn];
+                [captureDevice unlockForConfiguration];
+            }
+        }
+    }
 }
 
 #pragma mark 上下滚动交互线
