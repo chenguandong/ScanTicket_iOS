@@ -18,6 +18,8 @@
 @property(nonatomic,strong)TicketDetailVC *detailVC;
 
 @property(nonatomic,assign)BOOL isFlashLight;
+
+@property(nonatomic,strong)AVAudioPlayer* player;
 @end
 
 @implementation QRCodeReaderVC
@@ -30,6 +32,11 @@
     
     [[TTMQRCodeReader sharedReader] startReaderOnView:self.view withFlashLight:_isFlashLight];
     self.title = @"识票";
+    
+    
+   
+    
+   
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
@@ -43,6 +50,10 @@
     [super viewWillDisappear:YES];
     
     self.title = @"";
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+   
     
 }
 
@@ -75,6 +86,11 @@
         UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"close"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonClick:)];
     
         self.navigationItem.rightBarButtonItem = backBarButton;
+    
+    
+    
+    
+  
    
 }
 
@@ -110,11 +126,36 @@
     
     _ticketCode =qrCode.stringValue;
     
-   [self performSegueWithIdentifier:@"QR" sender:self];
+    [self performSegueWithIdentifier:@"QR" sender:self];
+    
+    [self playSuccessVoice]
+    ;
+   
+}
 
+- (void)playSuccessVoice{
+    //扬声器播放
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    NSError* err;
+    
+    if (!_player) {
+        _player = [[AVAudioPlayer alloc]
+                   initWithContentsOfURL:
+                   [[NSBundle mainBundle] URLForResource:@"qrcode_completed" withExtension:@"mp3"]
+                   error:&err ];
+    }
     
     
+    _player.volume = 1;
+    if (err) {
+        NSLog(@"play error");
+    }else{
+        NSLog(@"play success");
+    }
+    [_player prepareToPlay];
     
+    [_player play];
     
 }
 

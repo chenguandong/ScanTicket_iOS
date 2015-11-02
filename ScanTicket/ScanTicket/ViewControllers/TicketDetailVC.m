@@ -30,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ticketStateImageView;
 
 @property(nonatomic,strong)TicketStateErrorView *errorView;
+
+@property(nonatomic,copy)NSString *idfv;
 @end
 
 @implementation TicketDetailVC
@@ -38,10 +40,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
     [self getHttpDataWithQRCode:_ticketQRCode];
     
-
+    
     
 }
 
@@ -89,11 +92,13 @@
 -(void)getHttpDataWithQRCode:(NSString*)ticketQRCode{
     
     //http://www.shipiao.net/api/queryTicket.json?barCode=XNJE519573PKLW870LTN&source=Android
+    
     MBProgressHUD *hud = [MBProgressHUD createHUD];
     
     NSDictionary *parms = @{
                             @"barCode":ticketQRCode,
-                            @"source":@"iOS"
+                            @"source":@"iOS",
+                            @"sourceid":_idfv
                             };
     
     [NetWorkTools postHttpWithHttpAdress:@"http://www.shipiao.net/api/queryTicket.json?" parameters:parms success:^(AFHTTPRequestOperation *operation, id responseObject) {

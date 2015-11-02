@@ -9,7 +9,6 @@
 #import "ChooseWayVC.h"
 
 @interface ChooseWayVC ()
-
 @end
 
 @implementation ChooseWayVC
@@ -17,12 +16,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     
     self.title = @"识票";
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

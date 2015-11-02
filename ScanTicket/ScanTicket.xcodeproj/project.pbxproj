@@ -22,6 +22,8 @@
 		2939A71B1BC39BCE0044D793 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2939A7191BC39BCE0044D793 /* Main.storyboard */; };
 		2939A71D1BC39BCE0044D793 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2939A71C1BC39BCE0044D793 /* Assets.xcassets */; };
 		2939A7201BC39BCE0044D793 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2939A71E1BC39BCE0044D793 /* LaunchScreen.storyboard */; };
+		29B6F29C1BE767F300A613FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B6F29B1BE767F300A613FE /* AVFoundation.framework */; };
+		29B6F29E1BE768BE00A613FE /* qrcode_completed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29B6F29D1BE768BE00A613FE /* qrcode_completed.mp3 */; };
 		29CFE92C1BC4B4D6000BCCFB /* TicketHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CFE92B1BC4B4D6000BCCFB /* TicketHistoryVC.m */; };
 		29CFE92F1BC4B750000BCCFB /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CFE92E1BC4B750000BCCFB /* HistoryModel.m */; };
 		29CFE9341BC4C041000BCCFB /* TTMQRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CFE9331BC4C041000BCCFB /* TTMQRCodeReader.m */; };
@@ -76,6 +78,8 @@
 		2939A71C1BC39BCE0044D793 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2939A71F1BC39BCE0044D793 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2939A7211BC39BCE0044D793 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29B6F29B1BE767F300A613FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		29B6F29D1BE768BE00A613FE /* qrcode_completed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = qrcode_completed.mp3; path = ScanTicket/qrcode_completed.mp3; sourceTree = "<group>"; };
 		29CFE92A1BC4B4D5000BCCFB /* TicketHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketHistoryVC.h; sourceTree = "<group>"; };
 		29CFE92B1BC4B4D6000BCCFB /* TicketHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketHistoryVC.m; sourceTree = "<group>"; };
 		29CFE92D1BC4B750000BCCFB /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B6F29C1BE767F300A613FE /* AVFoundation.framework in Frameworks */,
 				A9CE93FFDA813FC5F8DD4FF7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +152,7 @@
 		2939A7041BC39BCE0044D793 = {
 			isa = PBXGroup;
 			children = (
+				29B6F29D1BE768BE00A613FE /* qrcode_completed.mp3 */,
 				29FD58821BC3BFD200DF31BD /* ScanTicket.pch */,
 				2939A70F1BC39BCE0044D793 /* ScanTicket */,
 				2939A70E1BC39BCE0044D793 /* Products */,
@@ -328,6 +334,7 @@
 		2DA5444DFF9E55ED47BF230C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29B6F29B1BE767F300A613FE /* AVFoundation.framework */,
 				8064E55A79E898099764F6AD /* libPods.a */,
 			);
 			name = Frameworks;
@@ -408,6 +415,7 @@
 				29FB55E41BC6496D007E65FE /* logo120.png in Resources */,
 				2909C7661BDC8577004DFC56 /* open.png in Resources */,
 				2909C76E1BDC8E34004DFC56 /* open@3x.png in Resources */,
+				29B6F29E1BE768BE00A613FE /* qrcode_completed.mp3 in Resources */,
 				29FD58801BC39F3200DF31BD /* logo.png in Resources */,
 				2909C76D1BDC8E34004DFC56 /* close@3x.png in Resources */,
 				2909C76C1BDC8E34004DFC56 /* open@2x.png in Resources */,
