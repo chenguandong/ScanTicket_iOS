@@ -93,12 +93,14 @@
     
     //http://www.shipiao.net/api/queryTicket.json?barCode=XNJE519573PKLW870LTN&source=Android
     
+    NSLog(@"%@",_idfv);
+    
     MBProgressHUD *hud = [MBProgressHUD createHUD];
     
     NSDictionary *parms = @{
                             @"barCode":ticketQRCode,
                             @"source":@"iOS",
-                            @"sourceid":_idfv
+                            @"sourceId":_idfv
                             };
     
     [NetWorkTools postHttpWithHttpAdress:@"http://www.shipiao.net/api/queryTicket.json?" parameters:parms success:^(AFHTTPRequestOperation *operation, id responseObject) {

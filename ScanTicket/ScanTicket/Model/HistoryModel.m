@@ -21,6 +21,7 @@
         _source = dic[@"source"];
         _ticketId = [dic[@"ticketId"] intValue];
         _uuid = dic[@"uuid"];
+        _sourceId = dic[@"sourceId"];
         
     }
     return self;

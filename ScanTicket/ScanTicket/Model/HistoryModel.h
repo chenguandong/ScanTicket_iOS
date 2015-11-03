@@ -14,6 +14,7 @@
 @property(nonatomic,copy)NSString * source;
 @property(nonatomic,assign)int  ticketId;
 @property(nonatomic,copy)NSString * uuid;
+@property(nonatomic,copy)NSString *sourceId;
 
 - (instancetype)initWithDic:(NSDictionary*)dic;
 @end

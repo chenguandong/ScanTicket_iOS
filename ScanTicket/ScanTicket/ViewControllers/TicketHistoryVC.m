@@ -60,7 +60,11 @@
         
         cell.textLabel.text = [NSString getFormatDateTime:model.scanTime];
         
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@客户端",model.source];
+        if ([model.sourceId.uppercaseString isEqualToString:[[[UIDevice currentDevice] identifierForVendor] UUIDString].uppercaseString]) {
+            cell.detailTextLabel.text = @"本机";
+        }else{
+             cell.detailTextLabel.text = [NSString stringWithFormat:@"%@客户端",model.source];
+        }
         cell.detailTextLabel.textColor = [UIColor blackColor];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
         

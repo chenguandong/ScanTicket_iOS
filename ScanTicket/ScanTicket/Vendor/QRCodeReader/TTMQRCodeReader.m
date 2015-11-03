@@ -124,7 +124,9 @@ static const float kReaderViewHeight = 200;
     // Set target metadata object types
     self.captureMetadataOutput.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
     
-    [self.captureMetadataOutput setRectOfInterest:[self getReaderViewBoundsWithSize:CGSizeMake(kReaderViewWidth, kReaderViewHeight)]];
+    
+    //设置扫面区域
+    //[self.captureMetadataOutput setRectOfInterest:[self getReaderViewBoundsWithSize:CGSizeMake(kReaderViewWidth, kReaderViewHeight)]];
     
     // Setup preview layer
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
