@@ -43,6 +43,8 @@
     [super viewDidDisappear:YES];
     
     [[TTMQRCodeReader sharedReader] stopReader];
+    
+    [[TTMQRCodeReader sharedReader] setDelegate:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -51,7 +53,7 @@
     
     self.title = @"";
     
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+   // [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
    
     

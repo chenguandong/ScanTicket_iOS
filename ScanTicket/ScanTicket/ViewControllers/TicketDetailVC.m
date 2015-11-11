@@ -48,20 +48,20 @@
     
 }
 
-- (void)backButtonClick{
-    
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
-        
-    }];
-}
+//- (void)backButtonClick{
+//    
+//    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
+//}
 
 - (IBAction)continueQR:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+//    [self dismissViewControllerAnimated:NO completion:^{
+//        
+//    }];
 }
 
 - (void)updateUI:(TicketDetailModel*)model{
